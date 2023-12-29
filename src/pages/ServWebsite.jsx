@@ -1,5 +1,6 @@
-import { Card, CardActionArea, CardContent, CardMedia, TextField, Typography } from '@mui/material'
-import React from 'react'
+import { Card, CardActionArea, CardContent, CardMedia, TextField, InputLabel, MenuItem, Select, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import Reviews from '../component/reviews/Reviews'
 
 const ServWebsite = () => {
 
@@ -21,8 +22,20 @@ const ServWebsite = () => {
     img: "",
     description: "A Fully Responsive Website that we have design for Vnergy Company, was built in 2 months.",
   }
-  ]
+  ];
 
+  const serviceList = [{
+    name: "website",
+  }, {
+    name: "mobile",
+  }, {
+    name: "design",
+  }];
+  const [selectedService, setSelectedService] = useState();
+
+  const handleServiceSelect = () => {
+    console.log(selectedService)
+  }
 
   return (
     <div className='servwebpage'>
@@ -47,6 +60,20 @@ const ServWebsite = () => {
               className='servweb-section-carousel-right-name'
               margin='normal'
             />
+            <InputLabel id="services">Services</InputLabel>
+            <Select
+              labelId="services"
+              id="services"
+              value={selectedService}
+              label="Services"
+              onChange={setSelectedService}
+            >
+              {serviceList.map((service) => (
+                <>
+                  <MenuItem value={service.name}>{service.name}</MenuItem>
+                </>
+              ))}
+            </Select>
             <TextField
               label="Description"
               multiline
@@ -55,7 +82,7 @@ const ServWebsite = () => {
               margin='normal'
             />
             <p>* Please fill all of the information</p>
-            <button>Send</button>
+            <button onClick={handleServiceSelect}>Send</button>
           </div>
         </div>
       </section>
@@ -68,12 +95,12 @@ const ServWebsite = () => {
                 <CardMedia
                   component="img"
                   height="250"
-                  sx={{objectFit:"fill"}}
+                  sx={{ objectFit: "fill" }}
                   image={project.img}
                   alt="project-image"
                 />
                 <CardContent>
-                  <h5 
+                  <h5
                   // gutterBottom variant="h5" component="div"
                   >
                     {project.title}
@@ -89,7 +116,7 @@ const ServWebsite = () => {
         </div>
       </section>
       <section className='servweb-section servweb-section-reviews'>
-            
+        <Reviews />
       </section>
 
     </div>
