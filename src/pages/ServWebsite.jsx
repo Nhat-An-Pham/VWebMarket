@@ -4,17 +4,18 @@ import React from 'react'
 const ServWebsite = () => {
 
   const projects = [{
+    title: "Bird Training Center",
+    img: require("../assets/pages/service/website/BirdtrainingProject.png"),
+    description: "Bird Training Center is a website that provides online learning, consulting, and bird training services. Besides, there is also a user management system, finance and functions on the website.",
+  }, {
     title: "Vnergy",
     img: require("../assets/pages/service/website/website project 1.jpg"),
-    description: "A Fully Responsive Website that we have design for Vnergy Company, was built in 2 months.",
+    description: "In this project of ours with Vnergy, we provided a landing page website for the business. Besides, there is also a system to manage all articles and layout of the page",
+
   }, {
     title: "ITECO jsc",
-    img: "",
-    description: "A Fully Responsive Website that we have design for Vnergy Company, was built in 2 months.",
-  }, {
-    title: "ITECO jsc",
-    img: "",
-    description: "A Fully Responsive Website that we have design for Vnergy Company, was built in 2 months.",
+    img: require("../assets/pages/service/website/ITECO Project.png"),
+    description: "Iteco's website is a pure Wordpress website, this proves that we also specialize in wordpress",
   }, {
     title: "ITECO jsc",
     img: "",
@@ -66,14 +67,17 @@ const ServWebsite = () => {
               <CardActionArea>
                 <CardMedia
                   component="img"
-                  height="200"
+                  height="250"
+                  sx={{objectFit:"fill"}}
                   image={project.img}
                   alt="project-image"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <h5 
+                  // gutterBottom variant="h5" component="div"
+                  >
                     {project.title}
-                  </Typography>
+                  </h5>
                   <Typography variant="body2" color="text.secondary" sx={{ height: "60px" }}>
                     {project.description}
                   </Typography>
@@ -85,7 +89,7 @@ const ServWebsite = () => {
         </div>
       </section>
       <section className='servweb-section servweb-section-reviews'>
-
+            
       </section>
 
     </div>
