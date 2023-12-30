@@ -16,8 +16,8 @@ function Layout() {
 
 
   return (
-    <BrowserRouter>
-      <Suspense fallback={<Preloader />}>
+    <Suspense fallback={<Preloader />}>
+      <BrowserRouter>
         <body>
           <Navbar />
           <Routes>
@@ -30,8 +30,8 @@ function Layout() {
           </Routes>
           <Footer />
         </body>
-      </Suspense>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 

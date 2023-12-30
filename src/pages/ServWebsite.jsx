@@ -25,16 +25,16 @@ const ServWebsite = () => {
   ];
 
   const serviceList = [{
-    name: "website",
+    name: "Website",
   }, {
-    name: "mobile",
+    name: "Mobile",
   }, {
-    name: "design",
+    name: "Design",
   }];
-  const [selectedService, setSelectedService] = useState();
+  const [selectedService, setSelectedService] = useState("");
 
-  const handleServiceSelect = () => {
-    console.log(selectedService)
+  const handleServiceSelect = (event) => {
+    setSelectedService(event)
   }
 
   return (
@@ -53,27 +53,33 @@ const ServWebsite = () => {
               className='servweb-section-carousel-right-name'
               margin='normal'
               sx={{ marginTop: "0px" }}
+              size='small'
             />
             <TextField
               label="Email"
               variant="outlined"
               className='servweb-section-carousel-right-name'
               margin='normal'
+              sx={{ marginTop: "0px" }}
+              size='small'
             />
-            <InputLabel id="services">Services</InputLabel>
-            <Select
-              labelId="services"
-              id="services"
-              value={selectedService}
-              label="Services"
-              onChange={setSelectedService}
-            >
-              {serviceList.map((service) => (
-                <>
-                  <MenuItem value={service.name}>{service.name}</MenuItem>
-                </>
-              ))}
-            </Select>
+            <div>
+              <InputLabel id="services">Services</InputLabel>
+              <Select
+                labelId="services"
+                id="services"
+                value={selectedService}
+                label="Services"
+                onChange={(e) => handleServiceSelect(e.target.value)}
+                size='small'
+              >
+                {serviceList.map((service) => (
+                  <>
+                    <MenuItem value={service.name}>{service.name}</MenuItem>
+                  </>
+                ))}
+              </Select>
+            </div>
             <TextField
               label="Description"
               multiline

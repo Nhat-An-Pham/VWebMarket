@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 const Preloader = () => {
     const [show, setShow] = useState(false)
     useEffect(() => {
-        let timeout = setTimeout(() => setShow(true), 300)
+        let timeout = setTimeout(() => setShow(true), 3000)
         return () => {
             clearTimeout(timeout)
         }
@@ -11,7 +11,9 @@ const Preloader = () => {
 
     return (
         <>
-            {show && <h3>Loading ...</h3>}
+            {/* {show=== true && */}
+                <h3>Loading ...</h3>
+            {/* } */}
         </>
     )
 }
