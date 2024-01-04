@@ -10,6 +10,7 @@ import ServMobile from "../pages/ServMobile";
 import ServDesign from "../pages/ServDesign";
 
 import Preloader from "../component/preloader/Preloader";
+import Templates from "../pages/Templates";
 const Home = lazy(() => import("../pages/Home"));
 
 function Layout() {
@@ -27,6 +28,7 @@ function Layout() {
             <Route path="/service-website" exact element={<ServWebsite />} />
             <Route path="/service-mobile" exact element={<ServMobile />} />
             <Route path="/service-design" exact element={<ServDesign />} />
+            <Route path="/templates" exact element={<Templates />} />
           </Routes>
           <Footer />
         </body>

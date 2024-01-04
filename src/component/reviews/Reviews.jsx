@@ -95,7 +95,7 @@ const Reviews = () => {
           <FaChevronRight />
         </button>
       </div>
-      <button className="random-btn" onClick={getRandomPerson}>Get Random Review</button>
+      <button className="random-btn" onClick={getRandomPerson}>Random Review</button>
     </article>
   )
 }

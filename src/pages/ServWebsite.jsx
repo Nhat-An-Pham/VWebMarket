@@ -31,10 +31,28 @@ const ServWebsite = () => {
   }, {
     name: "Design",
   }];
+
+
+  const [errMessage, setErrMessage] = useState("")
   const [selectedService, setSelectedService] = useState("");
 
+  const contactForm = {
+    name: null,
+    email: null,
+    service: null,
+    description: null,
+  }
+
   const handleServiceSelect = (event) => {
-    setSelectedService(event)
+    setSelectedService(event.target.value);
+  }
+
+  const handleSubmit = () => {
+    if (contactForm.name === null || contactForm.email === null || contactForm.description === null || contactForm.service === null) {
+      setErrMessage("* Please fill all of the information")
+    } else {
+
+    }
   }
 
   return (
@@ -70,13 +88,11 @@ const ServWebsite = () => {
                 id="services"
                 value={selectedService}
                 label="Services"
-                onChange={(e) => handleServiceSelect(e.target.value)}
+                onChange={handleServiceSelect}
                 size='small'
               >
                 {serviceList.map((service) => (
-                  <>
-                    <MenuItem value={service.name}>{service.name}</MenuItem>
-                  </>
+                  <MenuItem value={service.name}>{service.name}</MenuItem>
                 ))}
               </Select>
             </div>
@@ -87,8 +103,10 @@ const ServWebsite = () => {
               className='servweb-section-carousel-right-descr'
               margin='normal'
             />
-            <p>* Please fill all of the information</p>
-            <button onClick={handleServiceSelect}>Send</button>
+            {errMessage ?
+              <p style={{ color: "red" }}>{errMessage}</p>
+              : null}
+            <button onClick={() => handleSubmit()}>Send</button>
           </div>
         </div>
       </section>

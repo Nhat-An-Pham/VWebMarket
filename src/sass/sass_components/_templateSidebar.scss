@@ -1,0 +1,25 @@
+.template-category-container {
+    width: 20%;
+}
+
+.template-category-title {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    color: grey;
+    position: relative;
+    align-items: center;
+    border-bottom: 0.2px grey solid;
+    cursor: pointer;
+
+    h5 {
+        margin: 0px;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    &:hover {
+        color: white;
+        background-color: black;
+    }
+}
